@@ -1,0 +1,19 @@
+:root{
+    --color1: rgb(9, 0, 155) ;
+    --color2: rgb(15, 0, 255);
+    --color3: rgb(217, 140, 0);
+    --color4: rgb(255, 164, 0);
+    --font1: 'Courier New', Courier, monospace;
+    --font2: 'Comic Sans MS', 'Comic Sans', 'cursive';	
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--font2); /* Font perference in order */
+}
