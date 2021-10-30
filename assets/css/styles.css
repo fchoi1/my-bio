@@ -5,7 +5,6 @@
     --color4: rgb(255, 164, 0);
     --font1: 'Courier New', Courier, monospace;
     --font2: 'Comic Sans MS', 'Comic Sans', 'cursive';	
-
 }
 
 *{
@@ -14,15 +13,69 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: var(--font2); /* Font perference in order */
+}
+
+section{
+    border-color: black;
+    border-width:  2px;
+
+}
+
 header{
-    display: flex;
-    justify-content: column;
+    position: fixed;  
+    padding: 10px;
+    z-index: 1;
+    background-color: var(--color3);
+    color: var(--color1);
+    height: 100%;
+    width: 12%;
+    text-align: center;
 }
 
 header h1{
-    font-size: 40px;
+    font-size: 40px;   
+    display: block; 
 }
 
-body{
-    font-family: var(--font2); /* Font perference in order */
+.navigation{
+    padding: 10px;
+    top: 76px;;
+    background-color: var(--color3);
+    transition: 0.5s;/*  Transition effect */
+}
+
+.navigation ul{
+    list-style: none;
+}
+
+.navigation a{
+    padding-bottom: 10px;
+    text-decoration: none; 
+    font-size: 20px;
+    transition: 0.3s;
+    color: var(--color1);
+}
+
+.navigation a:hover{
+    color: var(--color2);
+}
+
+.hero{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../images/Fabio_CN_Tower.jpg');
+    /* Image scaling for all screens */
+    background-size: 2000px;
+    background-attachment: local;
+    background-repeat: no-repeat;
+
+    margin-right: auto;
+    height: 800px;
+    width: 100%;
+}
+
+.project img{
+    height: 200px;
+    width:  200px;
+
 }
