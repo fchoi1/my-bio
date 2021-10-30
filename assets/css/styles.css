@@ -15,12 +15,14 @@
 
 body{
     font-family: var(--font2); /* Font perference in order */
+    overflow-x: hidden;
+    
 }
 
 section{
     border-color: black;
-    border-width:  2px;
-
+    border-width: 2px;
+    padding: 1% 1% 13% 0;
 }
 
 header{
@@ -32,28 +34,48 @@ header{
     height: 100%;
     width: 12%;
     text-align: center;
+    overflow: hidden;
+    border-right: 2px solid black;
 }
 
 header h1{
     font-size: 40px;   
     display: block; 
+    color: var(--color1);
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* last param is alpha (Transperency) */
 }
 
-.navigation{
+header h1 a{
+    color: var(--color2);  
+    text-decoration: none;  
+}
+
+header img{
+    margin: 40px 0px;
+    border-radius: 50%;
+    border: 1px solid var(--color2);
+    padding: 1px;
+    height: 120px;
+    width: auto;
+}
+header .navigation{
     padding: 10px;
-    top: 76px;;
+    top: 76px;
     background-color: var(--color3);
-    transition: 0.5s;/*  Transition effect */
+    transition: 0.5s; /*  Transition effect */
 }
 
-.navigation ul{
+header .navigation ul{
     list-style: none;
 }
 
-.navigation a{
-    padding-bottom: 10px;
+header .navigation ul li{
+    margin-bottom: 20px;
+}
+
+header .navigation a{
     text-decoration: none; 
-    font-size: 20px;
+    font-size: 25px;
     transition: 0.3s;
     color: var(--color1);
 }
@@ -62,20 +84,47 @@ header h1{
     color: var(--color2);
 }
 
-.hero{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('../images/Fabio_CN_Tower.jpg');
-    /* Image scaling for all screens */
-    background-size: 2000px;
-    background-attachment: local;
-    background-repeat: no-repeat;
+/* Hero Section */
 
-    margin-right: auto;
-    height: 800px;
+.hero{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),url('../images/Fabio_CN_Tower.jpg');
+    /* Image position and scaling for all screens */
+    background-size: 100%;
+    background-attachment: local ;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+    height: 700px;
     width: 100%;
 }
 
-.project img{
-    height: 200px;
-    width:  200px;
+.hero-subtitle{
+    color: var(--color1);
+    position: relative;
+    top: 80%;
+    left: 80%;
+}
 
+.hero-subtitle a{
+    text-decoration: none;
+    color: var(--color3);
+}
+
+.work{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work h2{
+    width: 100%;
+}
+
+
+
+
+.project img{
+    margin: 10px;
+    height: 400px;
+    width:  400px;
+    position: center;
+    border: 4mm ridge var(--color4);
 }
