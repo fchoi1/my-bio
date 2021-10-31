@@ -6,6 +6,7 @@
     --font1: 'Courier New', Courier, monospace;
     --font2: 'Comic Sans MS', 'Comic Sans', 'cursive';
     --section-font-size: 40px;	
+    --default-padding: 1% 10px 1% 280px;
 }
 
 *{
@@ -25,8 +26,6 @@ body{
 header{
     font-family: var(--font1); /* Font perference in order */
     position: fixed;  
-    padding: 5px;
-    margin: 1px;
     z-index: 1;
     background-color: var(--color3);
     color: var(--color1);
@@ -39,7 +38,7 @@ header{
 
 header h1{
     font-family: var(--font2); /* Font perference in order */
-    margin-top: 20px;
+    padding: 20px 0px;
     font-size: 40px;   
     display: block; 
     color: var(--color1);
@@ -50,14 +49,14 @@ header h1{
 
 header h1 a{
     color: var(--color2);  
-    text-decoration: none;  
+    text-decoration: none; 
+    margin: 10px 0px;
 }
 
 header img{
-    margin: 40px 0px;
+    margin: 30px 0px;
     border-radius: 50%;
     border: 1px solid var(--color2);
-    padding: 1px;
     height: 120px;
     width: auto;
     transition: 0.5s;
@@ -75,7 +74,7 @@ header .navigation ul{
 }
 
 header .navigation ul li{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 header .navigation a{
@@ -93,7 +92,7 @@ header .navigation a{
 section{
     border-color: black;
     border-width: 2px;
-    padding: 1% 1% 1% 260px;
+    padding: 1% 10px 1% 260px;
 }
 
 /* Hero Section */
@@ -132,12 +131,20 @@ section{
 .intro h2{
     margin: 10px 0;
     font-size: var(--section-font-size);
+    padding: var(--default-padding);
+}
+
+.intro p{
+    line-height: 1.4;
+    padding: 1px 30px;
 }
 
 /* Work Section */
 .work{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: var(--default-padding);
 }
 
 .work-subtitle{
@@ -148,36 +155,47 @@ section{
     font-size: var(--section-font-size);
 }
 
+.project{
+    text-align: center;
+    position: relative;
+    height: 50%;
+    width: 45%;
+    min-width: 500px;
+
+}
 
 .project h3{
-    position: relative;
+    position: absolute;
     top: 80%;
     left: 5%;
-    width: max-content;
     color: var(--color2); 
     margin: 0; 
     padding: 0;
 }
 
-.project img{
-    margin: 10px;
-    object-fit: cover;
-    object-position: 10% 60%;
-    border: 4mm ridge var(--color4);
-    flex: 1 1 600px;
+.project a{
+    text-decoration: none;
 }
+
+.project a img{
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: left 30%;
+    border: 4mm ridge var(--color4);
+ }
 
 /* Larger img */
 
 .large-img{
-    width: 100%;
+    width: 70%;
 }
 
 .large-img img{
     width:  100%;
-    height: 700px;
+    height: auto;
     object-fit: cover;
-    object-position: top;
+    object-position: left 60%;
     border: 4mm ridge var(--color4);
 }
 
@@ -189,13 +207,33 @@ section{
     color: var(--color4);    
 }
 
+.contact{
+    padding: var(--default-padding);
+    margin: 10px 0;
+}
+
+.contact h2{
+    font-size: var(--section-font-size);
+}
+
+.contact ul{
+    font-size: 20px;
+}
+
+.footer{
+    background-color: var(--color1);
+    color: white;
+    padding: 1% 10px 1% 260px;
+}
+
+
 @media screen and (max-width: 1100px) { /* max width for 1100, proprties will have theses */
     header{
         width: 200px;
     }
 
     header h1{
-        font-size: 30px;
+        font-size: 30px; 
     }
 
     header .navigation a{
@@ -203,7 +241,9 @@ section{
     }
 
     header img{
-        height: 90px;
+        margin: 30px 0px;
+        height: 80px;
+        width: auto;
     }
 
     section{
@@ -250,4 +290,38 @@ section{
 }
 
 @media screen and (max-width: 575px) { /* max width for 575px, proprties will have theses */
+    header{
+        position: sticky;  
+        padding: 5px;
+        margin: 1px;
+        z-index: 1;
+        background-color: var(--color3);
+        color: var(--color1);
+        width: 100%; /* Width of side bar */
+        border-bottom: 1px solid black;
+    }
+    
+    header .navigation{
+        padding: 0px;
+    }
+
+    header img{
+        margin: 10px 0px;
+        height: 80px;
+        width: auto;
+    }
+
+    section{
+        padding: 1%;
+    }
+
+    .project img{
+        margin: 10px;
+        height: 50px;
+        width:  50px;
+        object-fit: cover;
+        object-position: 10% 60%;
+        border: 2mm ridge var(--color4);
+    }
+
 }
