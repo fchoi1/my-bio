@@ -4,7 +4,8 @@
     --color3: rgb(217, 140, 0);
     --color4: rgb(255, 164, 0);
     --font1: 'Courier New', Courier, monospace;
-    --font2: 'Comic Sans MS', 'Comic Sans', 'cursive';	
+    --font2: 'Comic Sans MS', 'Comic Sans', 'cursive';
+    --section-font-size: 40px;	
 }
 
 *{
@@ -14,35 +15,37 @@
 }
 
 body{
-    font-family: var(--font2); /* Font perference in order */
+    font-family: var(--font1); /* Font perference in order */
     overflow-x: hidden;
     
 }
 
-section{
-    border-color: black;
-    border-width: 2px;
-    padding: 1% 1% 13% 0;
-}
+/*side header Section */
 
 header{
+    font-family: var(--font1); /* Font perference in order */
     position: fixed;  
-    padding: 10px;
+    padding: 5px;
+    margin: 1px;
     z-index: 1;
     background-color: var(--color3);
     color: var(--color1);
     height: 100%;
-    width: 12%;
+    width: 250px; /* Width of side bar */
     text-align: center;
     overflow: hidden;
     border-right: 2px solid black;
 }
 
 header h1{
+    font-family: var(--font2); /* Font perference in order */
+    margin-top: 20px;
     font-size: 40px;   
     display: block; 
     color: var(--color1);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* last param is alpha (Transperency) */
+    margin: auto;
+    transition: 0.3s;
 }
 
 header h1 a{
@@ -57,7 +60,9 @@ header img{
     padding: 1px;
     height: 120px;
     width: auto;
+    transition: 0.5s;
 }
+
 header .navigation{
     padding: 10px;
     top: 76px;
@@ -84,6 +89,13 @@ header .navigation a{
     color: var(--color2);
 }
 
+/* to account for side nav */
+section{
+    border-color: black;
+    border-width: 2px;
+    padding: 1% 1% 1% 260px;
+}
+
 /* Hero Section */
 
 .hero{
@@ -95,36 +107,147 @@ header .navigation a{
     background-position: 50% 60%;
     height: 700px;
     width: 100%;
+    opacity: 0.9;
+    transition: 0.3s;
 }
 
 .hero-subtitle{
     color: var(--color1);
     position: relative;
     top: 80%;
-    left: 80%;
+    left: 70%;
+    font-size: 1.25vw;
 }
 
 .hero-subtitle a{
     text-decoration: none;
     color: var(--color3);
 }
+/* About me Section */
 
+.intro{
+    text-align: center;
+}
+
+.intro h2{
+    margin: 10px 0;
+    font-size: var(--section-font-size);
+}
+
+/* Work Section */
 .work{
     display: flex;
     flex-wrap: wrap;
 }
 
-.work h2{
+.work-subtitle{
     width: 100%;
 }
 
+.work-subtitle h2{
+    font-size: var(--section-font-size);
+}
 
 
+.project h3{
+    position: relative;
+    top: 80%;
+    left: 5%;
+    width: max-content;
+    color: var(--color2); 
+    margin: 0; 
+    padding: 0;
+}
 
 .project img{
     margin: 10px;
-    height: 400px;
-    width:  400px;
-    position: center;
+    object-fit: cover;
+    object-position: 10% 60%;
     border: 4mm ridge var(--color4);
+    flex: 1 1 600px;
+}
+
+/* Larger img */
+
+.large-img{
+    width: 100%;
+}
+
+.large-img img{
+    width:  100%;
+    height: 700px;
+    object-fit: cover;
+    object-position: top;
+    border: 4mm ridge var(--color4);
+}
+
+.large-img h3{
+    position: relative;
+    top: 80%;
+    left: 5%;
+    font-size: 30px;
+    color: var(--color4);    
+}
+
+@media screen and (max-width: 1100px) { /* max width for 1100, proprties will have theses */
+    header{
+        width: 200px;
+    }
+
+    header h1{
+        font-size: 30px;
+    }
+
+    header .navigation a{
+        font-size: 20px;
+    }
+
+    header img{
+        height: 90px;
+    }
+
+    section{
+        padding: 1% 1% 1% 210px;
+    }
+
+    .hero{
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),url('../images/Fabio_CN_Tower.jpg');
+        /* Image position and scaling for all screens */
+        background-size: 100%;
+        background-attachment: local ;
+        background-repeat: no-repeat;
+        background-position: 30% 60%;
+        height: 400px;
+        width: 100%;
+        opacity: 0.9;
+    }
+
+    .large-img img{
+        width:  100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: top;
+        border: 2mm ridge var(--color4);
+    }
+
+    .project img{
+        margin: 10px;
+        height: 200px;
+        width:  600px;
+        object-fit: cover;
+        object-position: 10% 60%;
+        border: 2mm ridge var(--color4);
+    }
+}
+
+@media screen and (max-width: 768px) { /* max width for 768, proprties will have theses */
+    header .navigation a{
+        text-decoration: none; 
+        font-size: 15px;
+        transition: 0.3s;
+        color: var(--color1);
+    }
+}
+
+@media screen and (max-width: 575px) { /* max width for 575px, proprties will have theses */
 }
