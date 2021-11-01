@@ -164,18 +164,21 @@ section{
     margin: 10px;
 }
 
+.project .project-image{
+    text-decoration: none;
+}
+
 .project .project-name{
     position: absolute;
     top: 80%;
     left: 5%;
-    color: var(--color2); 
+    color: white; 
+    font-family:'Times New Roman', Times, serif;
+    font-stretch: expanded;
     margin: 0; 
     padding: 0;
-    font-size: 1vw;
-}
-
-.project .project-image{
-    text-decoration: none;
+    font-size: 2vw;
+    z-index: 2;
 }
 
 .project .project-image img{
@@ -185,8 +188,12 @@ section{
     object-position: left top;
     border: 2mm solid var(--color4);
     border-radius: 2em;
-
+    opacity: 0.8
  }
+
+ .project:hover .project-image img{
+    opacity: 1
+}
 
 /* Larger img */
 
@@ -196,8 +203,12 @@ section{
 }
 
 .large-img .large-h3{
-    top: 85%;
-    font-size: 2vw;
+    top: 10%;
+    font-size: 3vw;
+}
+
+.large-img .project-image img{
+    object-position: left 35%;
 }
 
 .contact{
@@ -219,6 +230,11 @@ section{
     color: black;
     padding: 1% 10px 1% 260px;
 }
+
+.strokeme {
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  }
 
 
 @media screen and (max-width: 1100px) { /* max width for 1100, proprties will have theses */
@@ -260,6 +276,14 @@ section{
         font-size: 30px;
     }
 
+    .project .project-name{
+        font-size: 2vw;
+    }
+
+    .large-img .large-h3{
+        font-size: 4vw;
+    }
+
     .project, .large-img{
         min-width: 300px;
     }
@@ -267,9 +291,7 @@ section{
     .large-img img, .project a img{
         border: 1mm solid var(--color4);
     }
-
     
-
 }
 
 @media screen and (max-width: 768px) { /* max width for 768, proprties will have theses */
@@ -282,15 +304,63 @@ section{
 }
 
 @media screen and (max-width: 575px) { /* max width for 575px, proprties will have theses */
+    body{
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }
     header{
-        position: sticky;  
-        padding: 5px;
-        margin: 1px;
-        z-index: 1;
-        background-color: var(--color3);
-        color: var(--color1);
+        padding: 0px;
+        margin: 0px;
+        height: 180px;
         width: 100%; /* Width of side bar */
         border-bottom: 1px solid black;
+        border-right: 0px ;
+        overflow-x: hidden;
+    }
+    /*
+    header{
+        font-family: var(--font1); /* Font perference in order 
+        position: fixed;  
+        z-index: 1;
+        background-color: var(--color1);
+        height: 100%;
+        width: 250px; /* Width of side bar 
+        text-align: center;
+    }
+    */
+
+    header h1{
+        font-family: var(--font2); /* Font perference in order */
+        padding: 5px 0px;
+        font-size: 20px;   
+    }
+    
+    header h1 a{
+        color: var(--color2);  
+        text-decoration: none; 
+        margin: 10px 0px;
+    }
+    
+    header img{
+        margin: 10px 0px;
+        border: 1px solid var(--color4);
+        height: 140px;
+    }
+    
+    header .navigation{
+        padding: 10px;
+        top: 76px;
+    }
+    
+    header .navigation ul li{
+        margin-bottom: 0px;
+    }
+    
+    header .navigation a{
+        font-size: 10px;
+        color: var(--color4);
+        font-weight: 700;
     }
     
     header .navigation{
@@ -299,21 +369,47 @@ section{
 
     header img{
         margin: 10px 0px;
-        height: 80px;
+        height: 40px;
         width: auto;
+    }
+
+    .hero{
+        background-image: url('../images/Fabio_CN_Tower.jpg');
+        /* Image position and scaling for all screens */
+        background-size: 80%;
+        background-attachment: local ;
+        background-repeat: no-repeat;
+        background-position: 50% 60%;
+        height: 500px;
+        width: 100%;
+        opacity: 0.9;
+        transition: 0.3s;
     }
 
     section{
         padding: 1%;
     }
-
-    .project img{
+    .project{
+        position: relative;
+        height: 20vw;
+        width: 45%;
+        min-width: 100px;
         margin: 10px;
-        height: 50px;
-        width:  50px;
-        object-fit: cover;
-        object-position: 10% 60%;
-        border: 1mm solid var(--color4);
+    }
+
+    .intro{
+        text-align: center;
+        background-color: var(--color3);
+    }
+    
+    .intro h2{
+        margin: 1px 0;
+        font-size: 15px;
+    }
+
+    .work-subtitle h2{
+        font-size: 15px;
+        padding-bottom: 0.3%;
     }
 
 }
