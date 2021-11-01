@@ -116,10 +116,6 @@ section{
     font-size: 1.25vw;
 }
 
-.hero-subtitle a{
-    text-decoration: none;
-    color: var(--color3);
-}
 /* About me Section */
 
 .intro{
@@ -225,11 +221,18 @@ section{
     list-style: none;
 }
 
+.contact ul li a{
+    text-decoration: palegreen;
+}
+
 .footer{
     background-color: var(--color4);
     color: black;
     padding: 1% 10px 1% 260px;
 }
+
+
+
 
 .strokeme {
     color: white;
@@ -291,49 +294,38 @@ section{
     .large-img img, .project a img{
         border: 1mm solid var(--color4);
     }
+
+    .contact h2, .footer h2{
+        font-size: 20px;
+    }
+
     
 }
 
-@media screen and (max-width: 768px) { /* max width for 768, proprties will have theses */
-    header .navigation a{
-        text-decoration: none; 
-        font-size: 15px;
-        transition: 0.3s;
-        color: var(--color1);
-    }
-}
 
-@media screen and (max-width: 575px) { /* max width for 575px, proprties will have theses */
+
+@media screen and (max-width: 800px) { /* max width for 575px, proprties will have theses */
     body{
         overflow-x: hidden;
         margin: 0;
         padding: 0;
+        scrollbar-width: none;
     }
     header{
+        position: relative;
         padding: 0px;
         margin: 0px;
-        height: 180px;
-        width: 100%; /* Width of side bar */
+        height: 230px;
+        width: 100vw; /* Width of side bar */
         border-bottom: 1px solid black;
         border-right: 0px ;
-        overflow-x: hidden;
+        overflow: hidden;
     }
-    /*
-    header{
-        font-family: var(--font1); /* Font perference in order 
-        position: fixed;  
-        z-index: 1;
-        background-color: var(--color1);
-        height: 100%;
-        width: 250px; /* Width of side bar 
-        text-align: center;
-    }
-    */
 
     header h1{
         font-family: var(--font2); /* Font perference in order */
         padding: 5px 0px;
-        font-size: 20px;   
+        font-size: 25px;   
     }
     
     header h1 a{
@@ -343,14 +335,9 @@ section{
     }
     
     header img{
-        margin: 10px 0px;
+        margin: 0px;
         border: 1px solid var(--color4);
-        height: 140px;
-    }
-    
-    header .navigation{
-        padding: 10px;
-        top: 76px;
+        height: 80px;
     }
     
     header .navigation ul li{
@@ -358,48 +345,42 @@ section{
     }
     
     header .navigation a{
-        font-size: 10px;
+        font-size: 20px;
         color: var(--color4);
         font-weight: 700;
     }
     
-    header .navigation{
-        padding: 0px;
-    }
-
-    header img{
-        margin: 10px 0px;
-        height: 40px;
-        width: auto;
-    }
-
-    .hero{
-        background-image: url('../images/Fabio_CN_Tower.jpg');
-        /* Image position and scaling for all screens */
-        background-size: 80%;
-        background-attachment: local ;
-        background-repeat: no-repeat;
-        background-position: 50% 60%;
-        height: 500px;
-        width: 100%;
-        opacity: 0.9;
-        transition: 0.3s;
+.hero{
+    background-image: url('../images/Fabio_CN_Tower.jpg');
+    /* Image position and scaling for all screens */
+    background-size: 100%;
+    background-attachment: local ;
+    background-repeat: no-repeat;
+    background-position: 50% 60%;
+    height: 400px;
+    width: 100%;
+    opacity: 0.9;
+    transition: 0.3s;
+    padding: 1%;
     }
 
     section{
+        width: 100%;
         padding: 1%;
     }
-    .project{
+
+    .project, .large-img{
         position: relative;
-        height: 20vw;
-        width: 45%;
-        min-width: 100px;
+        height: 40vw;
+        width: 70%;
+        min-width: 200px;
         margin: 10px;
     }
 
     .intro{
         text-align: center;
         background-color: var(--color3);
+        padding: 1%;
     }
     
     .intro h2{
@@ -407,9 +388,36 @@ section{
         font-size: 15px;
     }
 
+
+    .large-img .large-h3{
+        font-size: 1.5vw;
+    }
+
+
+    .large-img img, .project a img{
+        border: 1mm solid var(--color4);
+    }
+
+    .work{
+        padding: 1%
+    }
+
     .work-subtitle h2{
         font-size: 15px;
         padding-bottom: 0.3%;
     }
+    
+    .contact, .footer{
+        padding: 1%;
+    }
 
-}
+    
+    .contact h2, .footer h2{
+        font-size: 15px;
+    }
+    
+    .contact ul li{
+        font-size: 10px;
+        list-style: none;
+    }
+    
