@@ -15,9 +15,15 @@
     box-sizing: border-box;
 }
 
+html, body{
+    position: relative;
+}
+
 body{
     font-family: var(--font1); /* Font perference in order */  
     overflow-x: hidden;  
+    width: 100%;
+
 }
 
 /*side header Section */
